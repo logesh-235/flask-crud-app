@@ -1,7 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
 import sqlite3
-#Logesh Edit now
-
 
 app = Flask(__name__)
 
@@ -10,6 +8,7 @@ def get_db_connection():
     conn = sqlite3.connect('database.db')
     conn.row_factory = sqlite3.Row
     return conn
+#added change yes
 
 # Create table if not exists
 def init_db():
@@ -74,5 +73,3 @@ def delete(id):
     conn.close()
     return redirect(url_for('index'))
 
-if __name__ == '__main__':
-    app.run(debug=True)
